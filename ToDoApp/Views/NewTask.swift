@@ -123,6 +123,7 @@ struct NewTaskEditorView: View{
     var body: some View{
         VStack(alignment:.leading){
             Text("What are your planning?")
+                .accessibility(identifier: "TaskPlaceholderText")
                 .foregroundColor(.gray)
                 .frame(height: 10, alignment: .leading)
             
@@ -170,12 +171,12 @@ struct NewTaskBottomView: View{
                     TextEditor(text: $notes)
                         .foregroundColor(notes == "add note" ? .gray : .black)
                         .frame(height: 40)
+                        .accessibility(identifier: "Add Note")
                         .onTapGesture {
                             if notes == "add note"{
                                 notes = ""
                             }
                         }
-                        .accessibility(identifier: "Add Note")
                 }
             }
             

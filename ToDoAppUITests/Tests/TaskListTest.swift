@@ -5,16 +5,27 @@
 //  Created by Alexander Chernyshev on 19.02.2023.
 //
 
-import SwiftUI
+import XCTest
 
-struct TaskListTest: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct TaskListTest_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskListTest()
+final class TaskListTest: CommonTest {
+    
+    private let taskListPage = TaskListPage()
+    
+    private let landingPage = LandingPage()
+    
+    /*
+     Переход на экран со списком задач и проверка работы чекбокса 
+     */
+    
+    func testCheckbox() {
+        landingPage
+            .openTask()
+        taskListPage
+            .checkTaskText()
+            .tapCheckbox()
+            .untapCheckbox()
+            .closeTaskList()
+        landingPage
+            .checkNavbarTitleOnLandingPage()
     }
 }

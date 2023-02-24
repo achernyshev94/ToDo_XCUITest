@@ -5,16 +5,22 @@
 //  Created by Alexander Chernyshev on 16.02.2023.
 //
 
-import SwiftUI
+import XCTest
 
-struct CommonTest: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class CommonTest: XCTestCase {
+    
+    let app = XCUIApplication()
+    
+    override func setUp() {
+        super.setUp()
+        
+        continueAfterFailure = false
+        XCUIApplication().launch()
+        
+    }
+    
+    override class func tearDown() {
+        super.tearDown()
     }
 }
 
-struct CommonTest_Previews: PreviewProvider {
-    static var previews: some View {
-        CommonTest()
-    }
-}

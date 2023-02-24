@@ -63,6 +63,7 @@ struct LandingView: View {
                 }
             }
             .navigationTitle("ToDo")
+            .accessibility(identifier: "ToDo")
         }
         .fullScreenCover(isPresented: $isPresentCreateTask, content: {
             withAnimation {

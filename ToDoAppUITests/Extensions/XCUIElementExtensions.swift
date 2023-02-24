@@ -5,16 +5,22 @@
 //  Created by Alexander Chernyshev on 19.02.2023.
 //
 
-import SwiftUI
+import XCTest
 
-struct XCUIElementExtensions: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension XCUIElement {
+        
+    func tapElement() {
+        checkExistence()
+        self.tap()
     }
-}
-
-struct XCUIElementExtensions_Previews: PreviewProvider {
-    static var previews: some View {
-        XCUIElementExtensions()
+    
+    func checkExistence(_ isExists:Bool = true) {
+        XCTAssertEqual(isExists, self.waitForExistence(timeout: 2), "Element exist should be \(isExists) but now is \(self.exists)")
     }
+       
+    func assertContains(text: String) {
+            let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+            let elementQuery = staticTexts.containing(predicate)
+            XCTAssertTrue(elementQuery.count > 0)
+        }
 }

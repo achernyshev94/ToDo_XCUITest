@@ -1,5 +1,5 @@
 //
-//  MainPage.swift
+//  CommonPage.swift
 //  ToDoAppUITests
 //
 //  Created by Alexander Chernyshev on 16.02.2023.
@@ -7,26 +7,19 @@
 
 import XCTest
 
-final class MainPage: CommonPage {
+class CommonPage {
     
     // MARK: - UI elements and variables
-        
-    private lazy var btnAdd: XCUIElement = {app.buttons["Add"]}()
     
-    private lazy var homeTitle: XCUIElement = {app.staticTexts["ToDo_title"]
-}()
+    let app = XCUIApplication()
     
+    private lazy var btnClose: XCUIElement = {app.buttons["Close"]}()
+
     // MARK: -  Actions
-    
+
     @discardableResult
-    func openNewTask() -> Self{
-        btnAdd.tap()
+    func closeNewTaskView() -> Self{
+        btnClose.tapElement()
         return self
-    }
-    
-    // MARK: -  Verification
-    
-    func checkTitle() {
-        XCTAssertTrue(homeTitle.exists)
     }
 }
