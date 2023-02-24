@@ -81,6 +81,7 @@ struct NewTaskView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
+                        .accessibility(identifier: "Add Task")
                 }
             }
         }
@@ -127,7 +128,7 @@ struct NewTaskEditorView: View{
             
             TextEditor(text: $txtTask)
                 .frame( height: 150, alignment: .leading)
-            
+                .accessibility(identifier: "Task")
             Divider()
             
             Spacer()
@@ -155,6 +156,7 @@ struct NewTaskBottomView: View{
                 VStack{
                     DatePicker("Select Date", selection: $selectedDate)
                         .labelsHidden()
+                        .accessibility(identifier: "Select Date")
                 }
                 Spacer()
             }
@@ -173,6 +175,7 @@ struct NewTaskBottomView: View{
                                 notes = ""
                             }
                         }
+                        .accessibility(identifier: "Add Note")
                 }
             }
             
@@ -223,6 +226,7 @@ struct CategoryView: View{
                 }
             })
         }
+        .accessibility(identifier: "Category")
     }
 }
 
