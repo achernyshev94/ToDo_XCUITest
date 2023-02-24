@@ -81,6 +81,7 @@ struct NewTaskView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
+                        .accessibility(identifier: "Add Task")
                 }
             }
         }
@@ -122,12 +123,13 @@ struct NewTaskEditorView: View{
     var body: some View{
         VStack(alignment:.leading){
             Text("What are your planning?")
+                .accessibility(identifier: "TaskPlaceholderText")
                 .foregroundColor(.gray)
                 .frame(height: 10, alignment: .leading)
             
             TextEditor(text: $txtTask)
                 .frame( height: 150, alignment: .leading)
-            
+                .accessibility(identifier: "Task")
             Divider()
             
             Spacer()
@@ -155,6 +157,7 @@ struct NewTaskBottomView: View{
                 VStack{
                     DatePicker("Select Date", selection: $selectedDate)
                         .labelsHidden()
+                        .accessibility(identifier: "Select Date")
                 }
                 Spacer()
             }
@@ -168,6 +171,7 @@ struct NewTaskBottomView: View{
                     TextEditor(text: $notes)
                         .foregroundColor(notes == "add note" ? .gray : .black)
                         .frame(height: 40)
+                        .accessibility(identifier: "Add Note")
                         .onTapGesture {
                             if notes == "add note"{
                                 notes = ""
@@ -223,6 +227,7 @@ struct CategoryView: View{
                 }
             })
         }
+        .accessibility(identifier: "Category")
     }
 }
 

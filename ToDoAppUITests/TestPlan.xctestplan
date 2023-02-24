@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "E0B9D487-B7E7-439E-81D9-B292734E4E61",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "language" : "ru",
+    "region" : "RU",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "ToDoAppUITests",
+        "ToDoAppUITestsLaunchTests"
+      ],
+      "target" : {
+        "containerPath" : "container:ToDoApp.xcodeproj",
+        "identifier" : "01466347299ABE31004A2A77",
+        "name" : "ToDoAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
