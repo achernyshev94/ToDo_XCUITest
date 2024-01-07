@@ -1,5 +1,6 @@
 # SwiftUI_ToDoApp
-Simple ToDo app using SwiftUI & Core Data. The project was covered with autotests using the native iOS XCUITest framework in Swift and the Page Object pattern.
+Простое ToDo приложение на SwiftUI & Core Data.
+В рамках учебного проекта приложение было покрыто UI тестами (XCUITest) с использованием Page Object паттерна.
 <table>
    <tr>
     <td>ToDo with Empty State</td>
